@@ -26,9 +26,8 @@ class LexemHandler
      */
     public function run($lexems, $mongoClient = '')
     {
-
         foreach ($this->lexems as $name => $lexem) {
-            if (class_exists($lexem['classname'])) {
+            if (class_exists($lexem['classname']) && isset($lexems[$name])) {
                 $lexem = new $lexem['classname'];
                 $lexem->handle($lexems[$name], $mongoClient);
             }

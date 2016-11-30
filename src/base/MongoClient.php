@@ -158,7 +158,8 @@ class MongoClient
     public function compile()
     {
         $db = $this->_connection;
-        $collection = $db->items;
+        $collection = $this->getCollection();
+        $collection = $db->$collection;
         $cursor = $collection->find($this->getCondition());
         if ($this->getLimit()) {
             $cursor->limit($this->getLimit());
