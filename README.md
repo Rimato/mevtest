@@ -8,4 +8,7 @@ Requirements
 Usage
 
     $ cd Project
-    $ php mongosql "select from items where ((quantity > 2) and (quantity < 5 ))"
+    $ php mongosql "select from items where ((quantity > 2) and (quantity < 5)) and (name = "bacon")"
+    
+Configuration
+    config/config.php
